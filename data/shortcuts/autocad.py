@@ -1,0 +1,88 @@
+'''
+autocad.py - Autodesk AutoCAD (current version, Windows) shortcuts.
+
+"Command Alias" entries are short names typed at the command line followed by Enter
+(for example "P, L" means type P then L = PLINE). They are "mcq" only.
+'''
+
+SHORTCUTS = [
+    # ---------- Function keys (drafting aids) ----------
+    {"keys": "F1", "action": "Open AutoCAD Help", "category": "Function Keys", "difficulty": "easy", "mode": "press"},
+    {"keys": "F2", "action": "Expand the command history", "category": "Function Keys", "difficulty": "medium", "mode": "press"},
+    {"keys": "F3", "action": "Turn Object Snap (OSNAP) on or off", "category": "Function Keys", "difficulty": "easy", "mode": "press"},
+    {"keys": "F4", "action": "Turn 3D Object Snap on or off", "category": "Function Keys", "difficulty": "hard", "mode": "press"},
+    {"keys": "F5", "action": "Cycle the isometric planes", "category": "Function Keys", "difficulty": "hard", "mode": "press"},
+    {"keys": "F6", "action": "Turn Dynamic UCS on or off", "category": "Function Keys", "difficulty": "hard", "mode": "press"},
+    {"keys": "F7", "action": "Show or hide the grid", "category": "Function Keys", "difficulty": "medium", "mode": "press"},
+    {"keys": "F8", "action": "Turn Ortho mode on or off", "category": "Function Keys", "difficulty": "easy", "mode": "press"},
+    {"keys": "F9", "action": "Turn Snap mode on or off", "category": "Function Keys", "difficulty": "medium", "mode": "press"},
+    {"keys": "F10", "action": "Turn Polar Tracking on or off", "category": "Function Keys", "difficulty": "medium", "mode": "press"},
+    {"keys": "F11", "action": "Turn Object Snap Tracking on or off", "category": "Function Keys", "difficulty": "hard", "mode": "press"},
+    {"keys": "F12", "action": "Turn Dynamic Input on or off", "category": "Function Keys", "difficulty": "medium", "mode": "press"},
+
+    # ---------- Ctrl shortcuts ----------
+    {"keys": "Ctrl+N", "action": "Create a new drawing", "category": "File & Edit", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+O", "action": "Open a drawing", "category": "File & Edit", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+S", "action": "Save the drawing", "category": "File & Edit", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+Shift+S", "action": "Save the drawing as a new file", "category": "File & Edit", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+P", "action": "Plot (print) the drawing", "category": "File & Edit", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+Z", "action": "Undo the last action", "category": "File & Edit", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+Y", "action": "Redo the last undone action", "category": "File & Edit", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+Shift+C", "action": "Copy with a base point", "category": "File & Edit", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+Shift+V", "action": "Paste the clipboard as a block", "category": "File & Edit", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+A", "action": "Select all objects", "category": "File & Edit", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+Shift+A", "action": "Turn object groups on or off", "category": "File & Edit", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+K", "action": "Insert a hyperlink", "category": "File & Edit", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+W", "action": "Turn selection cycling on or off", "category": "File & Edit", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+Shift+I", "action": "Turn infer constraints on or off", "category": "File & Edit", "difficulty": "hard", "mode": "press"},
+    {"keys": "Esc", "action": "Cancel the current command", "category": "File & Edit", "difficulty": "easy", "mode": "press"},
+    {"keys": "Space", "action": "Repeat the last command", "category": "File & Edit", "difficulty": "medium", "mode": "press"},
+    {"keys": "Delete", "action": "Delete the selected objects", "category": "File & Edit", "difficulty": "easy", "mode": "press"},
+
+    # ---------- Palettes and screen ----------
+    {"keys": "Ctrl+1", "action": "Show or hide the Properties palette", "category": "Palettes", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+2", "action": "Show or hide DesignCenter", "category": "Palettes", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+3", "action": "Show or hide the Tool Palettes", "category": "Palettes", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+8", "action": "Open QuickCalc", "category": "Palettes", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+9", "action": "Show or hide the command line", "category": "Palettes", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+0", "action": "Turn Clean Screen on or off", "category": "Palettes", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+Shift+P", "action": "Turn Quick Properties on or off", "category": "Palettes", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+Tab", "action": "Switch to the next open drawing", "category": "Palettes", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+R", "action": "Cycle through layout viewports", "category": "Palettes", "difficulty": "hard", "mode": "press"},
+
+    # ---------- Command aliases (typed at the command line) ----------
+    {"keys": "L", "action": "Command alias: LINE", "category": "Command Alias", "difficulty": "easy", "mode": "mcq"},
+    {"keys": "C", "action": "Command alias: CIRCLE", "category": "Command Alias", "difficulty": "easy", "mode": "mcq"},
+    {"keys": "A", "action": "Command alias: ARC", "category": "Command Alias", "difficulty": "medium", "mode": "mcq"},
+    {"keys": "P, L", "action": "Command alias: PLINE (polyline)", "category": "Command Alias", "difficulty": "medium", "mode": "mcq"},
+    {"keys": "R, E, C", "action": "Command alias: RECTANG (rectangle)", "category": "Command Alias", "difficulty": "easy", "mode": "mcq"},
+    {"keys": "P, O, L", "action": "Command alias: POLYGON", "category": "Command Alias", "difficulty": "medium", "mode": "mcq"},
+    {"keys": "E, L", "action": "Command alias: ELLIPSE", "category": "Command Alias", "difficulty": "medium", "mode": "mcq"},
+    {"keys": "M", "action": "Command alias: MOVE", "category": "Command Alias", "difficulty": "easy", "mode": "mcq"},
+    {"keys": "C, O", "action": "Command alias: COPY", "category": "Command Alias", "difficulty": "easy", "mode": "mcq"},
+    {"keys": "R, O", "action": "Command alias: ROTATE", "category": "Command Alias", "difficulty": "easy", "mode": "mcq"},
+    {"keys": "S, C", "action": "Command alias: SCALE", "category": "Command Alias", "difficulty": "easy", "mode": "mcq"},
+    {"keys": "S", "action": "Command alias: STRETCH", "category": "Command Alias", "difficulty": "medium", "mode": "mcq"},
+    {"keys": "M, I", "action": "Command alias: MIRROR", "category": "Command Alias", "difficulty": "medium", "mode": "mcq"},
+    {"keys": "O", "action": "Command alias: OFFSET", "category": "Command Alias", "difficulty": "medium", "mode": "mcq"},
+    {"keys": "T, R", "action": "Command alias: TRIM", "category": "Command Alias", "difficulty": "easy", "mode": "mcq"},
+    {"keys": "E, X", "action": "Command alias: EXTEND", "category": "Command Alias", "difficulty": "medium", "mode": "mcq"},
+    {"keys": "F", "action": "Command alias: FILLET", "category": "Command Alias", "difficulty": "medium", "mode": "mcq"},
+    {"keys": "C, H, A", "action": "Command alias: CHAMFER", "category": "Command Alias", "difficulty": "hard", "mode": "mcq"},
+    {"keys": "A, R", "action": "Command alias: ARRAY", "category": "Command Alias", "difficulty": "medium", "mode": "mcq"},
+    {"keys": "E", "action": "Command alias: ERASE", "category": "Command Alias", "difficulty": "easy", "mode": "mcq"},
+    {"keys": "X", "action": "Command alias: EXPLODE", "category": "Command Alias", "difficulty": "medium", "mode": "mcq"},
+    {"keys": "J", "action": "Command alias: JOIN", "category": "Command Alias", "difficulty": "medium", "mode": "mcq"},
+    {"keys": "B, R", "action": "Command alias: BREAK", "category": "Command Alias", "difficulty": "hard", "mode": "mcq"},
+    {"keys": "P, E", "action": "Command alias: PEDIT (edit polyline)", "category": "Command Alias", "difficulty": "hard", "mode": "mcq"},
+    {"keys": "H", "action": "Command alias: HATCH", "category": "Command Alias", "difficulty": "medium", "mode": "mcq"},
+    {"keys": "L, A", "action": "Command alias: LAYER (Layer Properties)", "category": "Command Alias", "difficulty": "easy", "mode": "mcq"},
+    {"keys": "Z", "action": "Command alias: ZOOM", "category": "Command Alias", "difficulty": "easy", "mode": "mcq"},
+    {"keys": "D, I", "action": "Command alias: DIST (measure distance)", "category": "Command Alias", "difficulty": "hard", "mode": "mcq"},
+    {"keys": "M, A", "action": "Command alias: MATCHPROP", "category": "Command Alias", "difficulty": "hard", "mode": "mcq"},
+    {"keys": "B", "action": "Command alias: BLOCK (create a block)", "category": "Command Alias", "difficulty": "medium", "mode": "mcq"},
+    {"keys": "I", "action": "Command alias: INSERT (insert a block)", "category": "Command Alias", "difficulty": "medium", "mode": "mcq"},
+    {"keys": "M, T", "action": "Command alias: MTEXT (multiline text)", "category": "Command Alias", "difficulty": "medium", "mode": "mcq"},
+    {"keys": "D, T", "action": "Command alias: TEXT (single-line text)", "category": "Command Alias", "difficulty": "hard", "mode": "mcq"},
+    {"keys": "D, L, I", "action": "Command alias: DIMLINEAR", "category": "Command Alias", "difficulty": "hard", "mode": "mcq"},
+]

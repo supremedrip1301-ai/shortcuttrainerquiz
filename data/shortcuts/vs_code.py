@@ -1,0 +1,132 @@
+'''
+vs_code.py - Visual Studio Code shortcuts (default keymap on Windows).
+Chords like "Ctrl+K, Ctrl+C" mean: press Ctrl+K, release, then press Ctrl+C.
+Ctrl+Alt+Up/Down are "mcq" only, because some graphics drivers rotate the screen with them.
+'''
+
+SHORTCUTS = [
+    # ---------- General ----------
+    {"keys": "Ctrl+Shift+P", "action": "Show the Command Palette", "category": "General", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+P", "action": "Quick Open a file by name", "category": "General", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+Shift+N", "action": "Open a new VS Code window", "category": "General", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+Shift+W", "action": "Close the VS Code window", "category": "General", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+,", "action": "Open Settings", "category": "General", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+K, Ctrl+S", "action": "Open Keyboard Shortcuts", "category": "General", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+K, Ctrl+T", "action": "Select a color theme", "category": "General", "difficulty": "hard", "mode": "press"},
+
+    # ---------- Files ----------
+    {"keys": "Ctrl+N", "action": "Create a new file", "category": "File", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+O", "action": "Open a file", "category": "File", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+S", "action": "Save the file", "category": "File", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+Shift+S", "action": "Save the file as a new name", "category": "File", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+K, S", "action": "Save all open files", "category": "File", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+W", "action": "Close the current editor tab", "category": "File", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+K, Ctrl+W", "action": "Close all editor tabs", "category": "File", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+Shift+T", "action": "Reopen the last closed editor", "category": "File", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+K, P", "action": "Copy the path of the active file", "category": "File", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+K, R", "action": "Reveal the active file in Windows Explorer", "category": "File", "difficulty": "hard", "mode": "press"},
+
+    # ---------- Basic editing ----------
+    {"keys": "Ctrl+X", "action": "Cut the whole line (when nothing is selected)", "category": "Editing", "difficulty": "medium", "mode": "press"},
+    {"keys": "Alt+Up", "action": "Move the line up", "category": "Editing", "difficulty": "medium", "mode": "press"},
+    {"keys": "Alt+Down", "action": "Move the line down", "category": "Editing", "difficulty": "medium", "mode": "press"},
+    {"keys": "Alt+Shift+Up", "action": "Copy the line up", "category": "Editing", "difficulty": "medium", "mode": "press"},
+    {"keys": "Alt+Shift+Down", "action": "Copy the line down", "category": "Editing", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+Shift+K", "action": "Delete the whole line", "category": "Editing", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+Enter", "action": "Insert a new line below", "category": "Editing", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+Shift+Enter", "action": "Insert a new line above", "category": "Editing", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+Shift+\\", "action": "Jump to the matching bracket", "category": "Editing", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+]", "action": "Indent the line", "category": "Editing", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+[", "action": "Outdent the line", "category": "Editing", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+/", "action": "Toggle a line comment", "category": "Editing", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+K, Ctrl+C", "action": "Add a line comment", "category": "Editing", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+K, Ctrl+U", "action": "Remove a line comment", "category": "Editing", "difficulty": "hard", "mode": "press"},
+    {"keys": "Alt+Shift+A", "action": "Toggle a block comment", "category": "Editing", "difficulty": "medium", "mode": "press"},
+    {"keys": "Alt+Z", "action": "Toggle word wrap", "category": "Editing", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+Shift+[", "action": "Fold (collapse) the current region", "category": "Editing", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+Shift+]", "action": "Unfold (expand) the current region", "category": "Editing", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+K, Ctrl+0", "action": "Fold all regions", "category": "Editing", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+K, Ctrl+J", "action": "Unfold all regions", "category": "Editing", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+K, Ctrl+X", "action": "Trim trailing whitespace", "category": "Editing", "difficulty": "hard", "mode": "press"},
+
+    # ---------- Multi-cursor and selection ----------
+    {"keys": "Ctrl+Alt+Up", "action": "Insert a cursor above", "category": "Multi-cursor", "difficulty": "hard", "mode": "mcq"},
+    {"keys": "Ctrl+Alt+Down", "action": "Insert a cursor below", "category": "Multi-cursor", "difficulty": "hard", "mode": "mcq"},
+    {"keys": "Ctrl+U", "action": "Undo the last cursor operation", "category": "Multi-cursor", "difficulty": "hard", "mode": "press"},
+    {"keys": "Alt+Shift+I", "action": "Insert a cursor at the end of each selected line", "category": "Multi-cursor", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+L", "action": "Select the current line", "category": "Multi-cursor", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+D", "action": "Add the next occurrence to the selection", "category": "Multi-cursor", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+Shift+L", "action": "Select all occurrences of the selection", "category": "Multi-cursor", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+F2", "action": "Select all occurrences of the current word", "category": "Multi-cursor", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+K, Ctrl+D", "action": "Move the last selection to the next match", "category": "Multi-cursor", "difficulty": "hard", "mode": "press"},
+    {"keys": "Alt+Shift+Right", "action": "Expand the selection", "category": "Multi-cursor", "difficulty": "hard", "mode": "press"},
+    {"keys": "Alt+Shift+Left", "action": "Shrink the selection", "category": "Multi-cursor", "difficulty": "hard", "mode": "press"},
+
+    # ---------- Code intelligence ----------
+    {"keys": "Ctrl+Space", "action": "Trigger code suggestions", "category": "Code Intelligence", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+Shift+Space", "action": "Show parameter hints", "category": "Code Intelligence", "difficulty": "hard", "mode": "press"},
+    {"keys": "Alt+Shift+F", "action": "Format the whole document", "category": "Code Intelligence", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+K, Ctrl+F", "action": "Format the selected code", "category": "Code Intelligence", "difficulty": "hard", "mode": "press"},
+    {"keys": "F12", "action": "Go to definition", "category": "Code Intelligence", "difficulty": "easy", "mode": "press"},
+    {"keys": "Alt+F12", "action": "Peek definition", "category": "Code Intelligence", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+K, F12", "action": "Open the definition to the side", "category": "Code Intelligence", "difficulty": "hard", "mode": "press"},
+    {"keys": "Shift+F12", "action": "Show all references", "category": "Code Intelligence", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+.", "action": "Show Quick Fix suggestions", "category": "Code Intelligence", "difficulty": "medium", "mode": "press"},
+    {"keys": "F2", "action": "Rename the symbol everywhere", "category": "Code Intelligence", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+K, Ctrl+I", "action": "Show the hover information", "category": "Code Intelligence", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+K, M", "action": "Change the language mode of the file", "category": "Code Intelligence", "difficulty": "hard", "mode": "press"},
+
+    # ---------- Navigation ----------
+    {"keys": "Ctrl+G", "action": "Go to a line number", "category": "Navigation", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+Shift+O", "action": "Go to a symbol in the file", "category": "Navigation", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+T", "action": "Show all symbols in the workspace", "category": "Navigation", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+Shift+M", "action": "Show the Problems panel", "category": "Navigation", "difficulty": "medium", "mode": "press"},
+    {"keys": "F8", "action": "Go to the next error or warning", "category": "Navigation", "difficulty": "medium", "mode": "press"},
+    {"keys": "Shift+F8", "action": "Go to the previous error or warning", "category": "Navigation", "difficulty": "hard", "mode": "press"},
+    {"keys": "Alt+Left", "action": "Go back to the previous cursor location", "category": "Navigation", "difficulty": "medium", "mode": "press"},
+    {"keys": "Alt+Right", "action": "Go forward to the next cursor location", "category": "Navigation", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+M", "action": "Toggle whether Tab moves the focus", "category": "Navigation", "difficulty": "hard", "mode": "press"},
+
+    # ---------- Editors and layout ----------
+    {"keys": "Ctrl+\\", "action": "Split the editor", "category": "Layout", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+1", "action": "Focus the first editor group", "category": "Layout", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+2", "action": "Focus the second editor group", "category": "Layout", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+PageDown", "action": "Open the next editor tab", "category": "Layout", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+PageUp", "action": "Open the previous editor tab", "category": "Layout", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+B", "action": "Show or hide the Side Bar", "category": "Layout", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+J", "action": "Show or hide the bottom panel", "category": "Layout", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+Shift+E", "action": "Show the Explorer view", "category": "Layout", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+Shift+F", "action": "Search in all files", "category": "Layout", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+Shift+H", "action": "Replace in all files", "category": "Layout", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+Shift+G", "action": "Show the Source Control view", "category": "Layout", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+Shift+D", "action": "Show the Run and Debug view", "category": "Layout", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+Shift+X", "action": "Show the Extensions view", "category": "Layout", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+Shift+U", "action": "Show the Output panel", "category": "Layout", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+K, Z", "action": "Turn on Zen Mode", "category": "Layout", "difficulty": "hard", "mode": "press"},
+    {"keys": "F11", "action": "Toggle full screen", "category": "Layout", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+=", "action": "Zoom in", "category": "Layout", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+-", "action": "Zoom out", "category": "Layout", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+Shift+V", "action": "Open the Markdown preview", "category": "Layout", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+K, V", "action": "Open the Markdown preview to the side", "category": "Layout", "difficulty": "hard", "mode": "press"},
+
+    # ---------- Find ----------
+    {"keys": "Ctrl+F", "action": "Find in the file", "category": "Find", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+H", "action": "Replace in the file", "category": "Find", "difficulty": "easy", "mode": "press"},
+    {"keys": "F3", "action": "Find the next match", "category": "Find", "difficulty": "medium", "mode": "press"},
+    {"keys": "Shift+F3", "action": "Find the previous match", "category": "Find", "difficulty": "medium", "mode": "press"},
+    {"keys": "Alt+Enter", "action": "Select all matches of the find", "category": "Find", "difficulty": "hard", "mode": "press"},
+    {"keys": "Alt+C", "action": "Toggle case-sensitive search", "category": "Find", "difficulty": "hard", "mode": "press"},
+    {"keys": "Alt+R", "action": "Toggle regular-expression search", "category": "Find", "difficulty": "hard", "mode": "press"},
+    {"keys": "Alt+W", "action": "Toggle whole-word search", "category": "Find", "difficulty": "hard", "mode": "press"},
+
+    # ---------- Debug and terminal ----------
+    {"keys": "F5", "action": "Start or continue debugging", "category": "Debug & Terminal", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+F5", "action": "Run without debugging", "category": "Debug & Terminal", "difficulty": "medium", "mode": "press"},
+    {"keys": "Shift+F5", "action": "Stop debugging", "category": "Debug & Terminal", "difficulty": "medium", "mode": "press"},
+    {"keys": "F9", "action": "Toggle a breakpoint", "category": "Debug & Terminal", "difficulty": "medium", "mode": "press"},
+    {"keys": "F10", "action": "Step over (debugger)", "category": "Debug & Terminal", "difficulty": "medium", "mode": "press"},
+    {"keys": "Shift+F11", "action": "Step out (debugger)", "category": "Debug & Terminal", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+`", "action": "Show the integrated terminal", "category": "Debug & Terminal", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+Shift+`", "action": "Create a new terminal", "category": "Debug & Terminal", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+Shift+C", "action": "Open an external terminal", "category": "Debug & Terminal", "difficulty": "hard", "mode": "press"},
+]

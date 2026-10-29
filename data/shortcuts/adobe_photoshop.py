@@ -1,0 +1,108 @@
+'''
+adobe_photoshop.py - Adobe Photoshop (current Creative Cloud version, Windows, default shortcuts).
+Single letters choose tools (V = Move tool), so they can be pressed as they are.
+'''
+
+SHORTCUTS = [
+    # ---------- Tools ----------
+    {"keys": "V", "action": "Select the Move tool", "category": "Tools", "difficulty": "easy", "mode": "press"},
+    {"keys": "M", "action": "Select the Marquee tool", "category": "Tools", "difficulty": "easy", "mode": "press"},
+    {"keys": "L", "action": "Select the Lasso tool", "category": "Tools", "difficulty": "easy", "mode": "press"},
+    {"keys": "W", "action": "Select the Object / Quick Selection tool", "category": "Tools", "difficulty": "medium", "mode": "press"},
+    {"keys": "C", "action": "Select the Crop tool", "category": "Tools", "difficulty": "easy", "mode": "press"},
+    {"keys": "I", "action": "Select the Eyedropper tool", "category": "Tools", "difficulty": "medium", "mode": "press"},
+    {"keys": "J", "action": "Select the Spot Healing Brush tool", "category": "Tools", "difficulty": "medium", "mode": "press"},
+    {"keys": "B", "action": "Select the Brush tool", "category": "Tools", "difficulty": "easy", "mode": "press"},
+    {"keys": "S", "action": "Select the Clone Stamp tool", "category": "Tools", "difficulty": "medium", "mode": "press"},
+    {"keys": "Y", "action": "Select the History Brush tool", "category": "Tools", "difficulty": "hard", "mode": "press"},
+    {"keys": "E", "action": "Select the Eraser tool", "category": "Tools", "difficulty": "easy", "mode": "press"},
+    {"keys": "G", "action": "Select the Gradient / Paint Bucket tool", "category": "Tools", "difficulty": "medium", "mode": "press"},
+    {"keys": "O", "action": "Select the Dodge / Burn tool", "category": "Tools", "difficulty": "hard", "mode": "press"},
+    {"keys": "P", "action": "Select the Pen tool", "category": "Tools", "difficulty": "medium", "mode": "press"},
+    {"keys": "T", "action": "Select the Type (text) tool", "category": "Tools", "difficulty": "easy", "mode": "press"},
+    {"keys": "A", "action": "Select the Path / Direct Selection tool", "category": "Tools", "difficulty": "hard", "mode": "press"},
+    {"keys": "U", "action": "Select the Shape (Rectangle) tool", "category": "Tools", "difficulty": "medium", "mode": "press"},
+    {"keys": "H", "action": "Select the Hand tool", "category": "Tools", "difficulty": "easy", "mode": "press"},
+    {"keys": "R", "action": "Select the Rotate View tool", "category": "Tools", "difficulty": "hard", "mode": "press"},
+    {"keys": "Z", "action": "Select the Zoom tool", "category": "Tools", "difficulty": "easy", "mode": "press"},
+    {"keys": "D", "action": "Reset to default colors (black / white)", "category": "Tools", "difficulty": "medium", "mode": "press"},
+    {"keys": "X", "action": "Swap foreground and background colors", "category": "Tools", "difficulty": "medium", "mode": "press"},
+    {"keys": "Q", "action": "Toggle Quick Mask mode", "category": "Tools", "difficulty": "hard", "mode": "press"},
+    {"keys": "F", "action": "Cycle through screen modes", "category": "Tools", "difficulty": "hard", "mode": "press"},
+    {"keys": "[", "action": "Make the brush smaller", "category": "Tools", "difficulty": "medium", "mode": "press"},
+    {"keys": "]", "action": "Make the brush bigger", "category": "Tools", "difficulty": "medium", "mode": "press"},
+    {"keys": "Shift+[", "action": "Make the brush softer (less hardness)", "category": "Tools", "difficulty": "hard", "mode": "press"},
+    {"keys": "Shift+]", "action": "Make the brush harder (more hardness)", "category": "Tools", "difficulty": "hard", "mode": "press"},
+    {"keys": "Tab", "action": "Show or hide all panels", "category": "Tools", "difficulty": "medium", "mode": "press"},
+
+    # ---------- File ----------
+    {"keys": "Ctrl+N", "action": "Create a new document", "category": "File", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+O", "action": "Open a file", "category": "File", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+S", "action": "Save the document", "category": "File", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+Shift+S", "action": "Save the document as a new file", "category": "File", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+Alt+Shift+W", "action": "Export As (PNG, JPG ...)", "category": "File", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+Alt+Shift+S", "action": "Save for Web (Legacy)", "category": "File", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+W", "action": "Close the document", "category": "File", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+P", "action": "Print the document", "category": "File", "difficulty": "medium", "mode": "press"},
+
+    # ---------- Edit ----------
+    {"keys": "Ctrl+Z", "action": "Undo (can go back many steps)", "category": "Edit", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+Shift+Z", "action": "Redo", "category": "Edit", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+Alt+Z", "action": "Toggle the last state (one undo)", "category": "Edit", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+T", "action": "Free Transform", "category": "Edit", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+Shift+T", "action": "Transform Again (repeat transform)", "category": "Edit", "difficulty": "hard", "mode": "press"},
+    {"keys": "Shift+F5", "action": "Open the Fill dialog", "category": "Edit", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+Shift+V", "action": "Paste in place", "category": "Edit", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+Shift+C", "action": "Copy merged (all visible layers)", "category": "Edit", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+K", "action": "Open Preferences", "category": "Edit", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+Alt+Shift+K", "action": "Open Keyboard Shortcuts and Menus", "category": "Edit", "difficulty": "hard", "mode": "press"},
+
+    # ---------- Layers ----------
+    {"keys": "Ctrl+Shift+N", "action": "Create a new layer (with dialog)", "category": "Layers", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+Alt+Shift+N", "action": "Create a new layer without the dialog", "category": "Layers", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+J", "action": "Duplicate the layer / layer via copy", "category": "Layers", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+Shift+J", "action": "Layer via cut", "category": "Layers", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+G", "action": "Group the selected layers", "category": "Layers", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+Shift+G", "action": "Ungroup layers", "category": "Layers", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+E", "action": "Merge the layer down", "category": "Layers", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+Shift+E", "action": "Merge all visible layers", "category": "Layers", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+Alt+Shift+E", "action": "Stamp visible layers into a new layer", "category": "Layers", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+Alt+G", "action": "Create / release a clipping mask", "category": "Layers", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+]", "action": "Bring the layer forward", "category": "Layers", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+[", "action": "Send the layer backward", "category": "Layers", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+Shift+]", "action": "Bring the layer to the front", "category": "Layers", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+Shift+[", "action": "Send the layer to the back", "category": "Layers", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+Alt+A", "action": "Select all layers", "category": "Layers", "difficulty": "hard", "mode": "press"},
+    {"keys": "F7", "action": "Show or hide the Layers panel", "category": "Layers", "difficulty": "medium", "mode": "press"},
+
+    # ---------- Selection ----------
+    {"keys": "Ctrl+A", "action": "Select the whole canvas", "category": "Selection", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+D", "action": "Deselect", "category": "Selection", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+Shift+D", "action": "Reselect the last selection", "category": "Selection", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+Shift+I", "action": "Invert the selection", "category": "Selection", "difficulty": "medium", "mode": "press"},
+    {"keys": "Shift+F6", "action": "Feather the selection", "category": "Selection", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+Alt+R", "action": "Open Select and Mask", "category": "Selection", "difficulty": "hard", "mode": "press"},
+
+    # ---------- Image adjustments ----------
+    {"keys": "Ctrl+L", "action": "Open Levels", "category": "Adjustments", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+M", "action": "Open Curves", "category": "Adjustments", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+U", "action": "Open Hue / Saturation", "category": "Adjustments", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+B", "action": "Open Color Balance", "category": "Adjustments", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+I", "action": "Invert the colors", "category": "Adjustments", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+Shift+U", "action": "Desaturate (make grayscale)", "category": "Adjustments", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+Shift+L", "action": "Apply Auto Tone", "category": "Adjustments", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+Alt+Shift+B", "action": "Open Black & White", "category": "Adjustments", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+Shift+A", "action": "Open the Camera Raw Filter", "category": "Adjustments", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+Alt+I", "action": "Change the Image Size", "category": "Adjustments", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+Alt+C", "action": "Change the Canvas Size", "category": "Adjustments", "difficulty": "medium", "mode": "press"},
+
+    # ---------- View ----------
+    {"keys": "Ctrl+=", "action": "Zoom in", "category": "View", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+-", "action": "Zoom out", "category": "View", "difficulty": "easy", "mode": "press"},
+    {"keys": "Ctrl+0", "action": "Fit the image on screen", "category": "View", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+1", "action": "View at 100% (actual pixels)", "category": "View", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+R", "action": "Show or hide rulers", "category": "View", "difficulty": "medium", "mode": "press"},
+    {"keys": "Ctrl+'", "action": "Show or hide the grid", "category": "View", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+;", "action": "Show or hide guides", "category": "View", "difficulty": "hard", "mode": "press"},
+    {"keys": "Ctrl+H", "action": "Show or hide extras", "category": "View", "difficulty": "hard", "mode": "press"},
+]
