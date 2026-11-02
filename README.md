@@ -47,6 +47,23 @@ python main.py
 
 `requirements.txt` installs **matplotlib, numpy and pandas**. Progress is saved in the `saves/` folder (created on first start).
 
+## Data storage setup (CSV database)
+
+The app needs **no database server**. All data is kept in six CSV files in the `saves/` folder, which `core/storage.py` creates automatically on the first start (the folder is ignored by Git through `.gitignore`).
+
+| File | One row per | Main columns |
+|------|-------------|--------------|
+| `players.csv` | player | name, avatar, xp, pin, streak, last_played, quizzes |
+| `history.csv` | finished quiz | date_time, player, mode, total, correct, score, accuracy, grade |
+| `mistakes.csv` | player + shortcut | player, software, keys, wrong_count, last_seen |
+| `settings.csv` | setting | key, value (theme, sound, seconds, questions) |
+| `achievements.csv` | unlocked badge | player, badge_id, date |
+| `software_results.csv` | software in a quiz | date_time, player, software, total, correct |
+
+- Missing, empty or damaged files are replaced by safe default values, so the app never crashes.
+- **Settings → Reset my progress** removes one player's rows from all the files.
+- To start completely fresh, close the app and delete the `saves/` folder.
+
 ## Tests
 
 ```
